@@ -17,6 +17,16 @@ main(int argc, char *argv[])
     } else if (rc == 0) {
 	// child: redirect standard output to a file
 	close(STDOUT_FILENO); 
+    /*
+    from `man 2 open`:
+    The file descriptor returned by a successful call will be the lowest-numbered file descriptor not currently open for the process.
+    By default, the new file descriptor is set to remain open across an execve(2)
+
+    So open redirect to the last closed `STDOUT_FILENO` which is probably lowest.
+
+    Above is also said in the book
+    > Specifically, UNIX systems start looking for free file descriptors at zero. In this case, STDOUT FILENO will be the first available one and thus get assigned when open() is called.
+    */
 	open("./p4.output", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
 
 	// now exec "wc"...
