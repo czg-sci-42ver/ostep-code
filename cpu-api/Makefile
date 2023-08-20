@@ -2,7 +2,7 @@
 all: p1 p2 p3 p4
 
 clean:
-	rm -f p1 p2 p3 p4 *.output
+	rm -f p1 p2 p3 p4 p4_* *.output
 
 p1: p1.c
 	gcc -o p1 p1.c -Wall
