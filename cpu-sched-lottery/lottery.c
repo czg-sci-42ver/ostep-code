@@ -43,6 +43,9 @@ main(int argc, char *argv[])
     int loops = atoi(argv[2]);
     srandom(seed);
 
+    /*
+    This controls the probability
+    */
     // populate list with some number of jobs, each
     // with some number of tickets
     insert(50);
