@@ -23,4 +23,4 @@ $(SUBDIRS):
 clean:
 	$(foreach dir,$(SUBDIRS),if [ -e $(dir)/Makefile ];then $(MAKE) -C $(dir) clean;fi;)
 
-.PHONY: all $(SUBDIRS)
+.PHONY: clean $(SUBDIRS)
