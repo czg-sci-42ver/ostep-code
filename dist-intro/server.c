@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
 	int rc = UDP_Read(sd, &addr, message, BUFFER_SIZE);
 	printf("server:: read message [size:%d contents:(%s)]\n", rc, message);
 	if (rc > 0) {
-            char reply[BUFFER_SIZE];
-            sprintf(reply, "goodbye world");
-            rc = UDP_Write(sd, &addr, reply, BUFFER_SIZE);
+        char reply[BUFFER_SIZE];
+        sprintf(reply, "goodbye world");
+        rc = UDP_Write(sd, &addr, reply, BUFFER_SIZE);
 	    printf("server:: reply\n");
 	} 
     }

@@ -8,6 +8,9 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in addrSnd, addrRcv;
 
     int sd = UDP_Open(20000);
+    /*
+    send to localhost:10000
+    */
     int rc = UDP_FillSockAddr(&addrSnd, "localhost", 10000);
 
     char message[BUFFER_SIZE];
